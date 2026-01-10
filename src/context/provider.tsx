@@ -7,7 +7,7 @@ import { ThemeProvider } from 'next-themes';
 export default function Provider({ children }: PropsWithChildren) {
     return (
         <HeroUIProvider>
-            <ThemeProvider attribute="class" defaultTheme="dark">
+            <ThemeProvider attribute="class" defaultTheme="light">
                 {children}
             </ThemeProvider>
         </HeroUIProvider>

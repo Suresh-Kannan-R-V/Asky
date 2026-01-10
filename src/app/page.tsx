@@ -1,13 +1,5 @@
-'use client';
-import { Basic } from "@components";
-import { useCommonStore } from "@store";
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const isOpen = useCommonStore((s) => s.isOpen)
-  return (
-    <>
-      <Basic />
-    </>
-  );
+export default function Page() {
+    redirect('/ua');
 }

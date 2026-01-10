@@ -3,6 +3,7 @@ import { CommonStoreSliceTypes } from './types';
 
 export const CommonStoreSlice: StateCreator<CommonStoreSliceTypes> = (set) => ({
     isOpen: true,
+    cardDropdownOpen: true,
     toggle: () => set((state) => ({ isOpen: !state.isOpen })),
     setIsOpen: (isOpen) => set({ isOpen: isOpen }),
 });

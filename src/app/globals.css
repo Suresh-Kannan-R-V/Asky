@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-kalam {
+  font-family: var(--font-kalam);
+}
