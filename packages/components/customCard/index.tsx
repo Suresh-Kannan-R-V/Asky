@@ -15,17 +15,21 @@ interface CustomCardProps {
     isFooterBlurred?: boolean;
     isDisabled?: boolean;
     className?: string;
+    title?: string;
+    onPress: () => void;
 }
 const CustomCard = React.memo(
     React.forwardRef((props: CustomCardProps, ref: React.Ref<HTMLDivElement>) => {
-        const { children, shadow,
+        const { children, shadow, title,
             radius,
             fullWidth,
             isHoverable,
             isPressable,
             isBlurred,
             isFooterBlurred,
-            isDisabled, className, ...rest
+            isDisabled, className,
+            onPress,
+            ...rest
         } = props;
 
         return (
@@ -38,8 +42,10 @@ const CustomCard = React.memo(
                 isBlurred={isBlurred}
                 isFooterBlurred={isFooterBlurred}
                 isDisabled={isDisabled}
+                title={title}
                 className={cn("border-t-5 border-primary-400 rounded-xl px-2 h-fit", className)}
                 ref={ref}
+                onPress={onPress}
                 {...rest}>
                 <CardBody>
                     {children}

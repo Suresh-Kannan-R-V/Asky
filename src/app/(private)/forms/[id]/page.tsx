@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import FormDataUI from './formData';
+import FormDataUI from '../formData';
 
 export const metadata: Metadata = {
     title: 'Forms | Asky',

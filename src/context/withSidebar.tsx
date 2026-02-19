@@ -19,7 +19,7 @@ interface Route {
 }
 
 export const WithSideBar = React.memo(() => {
-    const BASE_PATH = '/ua';
+    const BASE_PATH = '/';
 
     const route = useRouter();
     const pathname = usePathname();
@@ -50,19 +50,19 @@ export const WithSideBar = React.memo(() => {
         () => [
             {
                 id: 'dashboard',
-                route: `${BASE_PATH}`,
+                route: `/dashboard`,
                 name: 'Dashboard',
                 icons: undefined
             },
             {
                 id: 'create',
-                route: `${BASE_PATH}/create-form`,
+                route: `/create-form`,
                 name: 'Create Form',
                 icons: undefined
             },
             {
                 id: 'forms',
-                route: `${BASE_PATH}/forms`,
+                route: `/forms`,
                 name: 'Forms',
                 icons: undefined
             },

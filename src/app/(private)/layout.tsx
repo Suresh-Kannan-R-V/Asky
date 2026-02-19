@@ -6,14 +6,11 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className='flex w-full'>
-            {/* side bar component */}
+        <div className='flex w-full h-screen'>
             <WithSideBar />
             <div className="px-5 py-5 w-full">
-
                 {children}
             </div>
-            {/* Screen section */}
         </div>
     );
 }

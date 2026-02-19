@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { DashBoard } from "./(dashBoard)/page";
+import { DashBoard } from "./dashboard/page";
 export const metadata: Metadata = {
     title: 'Dashboard | Asky',
     description:

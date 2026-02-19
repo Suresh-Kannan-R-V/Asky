@@ -2,7 +2,7 @@
 'use client';
 
 import { cn } from '@heroui/react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { LogoIcon } from 'packages/icons';
 import React from 'react';
 import { Button } from '../button';
@@ -38,19 +38,22 @@ const Sidebar = React.memo(
     const pathname = usePathname();
 
     const isActive = (route: string, id: string) => {
-      if (id === 'dashboard') {
-        return pathname === '/ua';
-      }
+      // if (id === 'dashboard') {
+      //   return pathname === '/';
+      // }
       return pathname.includes(route);
     };
 
+    const router = useRouter();
 
-    // dummy token clear
     const logout = () => {
-      document.cookie = 'token=; Max-Age=0; path=/';
-      document.cookie = 'role=; Max-Age=0; path=/';
-      window.location.href = '/login';
+      localStorage.clear();
+      document.cookie = 'token=; path=/; max-age=0';
+      document.cookie = 'role=; path=/; max-age=0';
+
+      router.replace('/register');
     };
+
 
 
     return (

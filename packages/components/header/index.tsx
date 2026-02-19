@@ -7,8 +7,9 @@ import { BreadCrumbs } from '../breadcrumbs';
 
 interface HeaderProps {
     className?: string;
-    headerTitle: string;
-    Breadcrumbs?: React.JSX.Element;
+    headerTitle: string | React.ReactNode;
+    endContent?: string | React.ReactNode;
+    Breadcrumbs?: React.ReactNode;
     headerClass?: string;
 }
 
@@ -17,6 +18,7 @@ const Header = React.memo(
         const {
             className,
             headerTitle,
+            endContent,
             Breadcrumbs,
             headerClass,
             ...rest
@@ -24,13 +26,16 @@ const Header = React.memo(
 
         return (
             <div className={cn('bg-white px-4 py-2 rounded-xl shadow-md flex gap-4', className)} ref={ref} {...rest}>
-                <p className={cn('font-semibold text-base', headerClass)}>{headerTitle}</p>
-                <div>
-                    <BreadCrumbs />
+                <div className={cn("flex gap-4", headerClass)}>
+                    <p className={cn('font-semibold text-base')}>{headerTitle}</p>
+                    <div>
+                        <BreadCrumbs />
+                    </div>
                 </div>
+                <div>{endContent}</div>
             </div>
         );
     }));
 
-    Header.displayName = 'Header';
-    export { Header };
+Header.displayName = 'Header';
+export { Header };
